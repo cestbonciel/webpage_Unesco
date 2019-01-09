@@ -1,0 +1,74 @@
+@charset 'utf-8';
+#main-visual-wrap{min-width:1240px;overflow:hidden}
+/* #main-visual-wrap .main-visual-list li:nth-child(1),#main-visual-wrap .main-visual-list li:nth-child(2){display: none;} */
+
+#main-visual-wrap ul.main-visual-list{height: 590px;}
+#main-visual-wrap ul.main-visual-list li{position: relative;}
+#main-visual-wrap ul.main-visual-list .img01{width: 100%;}
+#main-visual-wrap ul.main-visual-list li .txt-wrap{width:1260px;position:absolute;z-index:9999;top:0;left:50%;margin-left:-630px;padding:50px;}
+#main-visual-wrap ul.main-visual-list li .txt-wrap .txt-content{font-size: 40px;color: #fff;margin-bottom:30px;text-shadow:2px 2px 10px #000;}
+#main-visual-wrap ul.main-visual-list li.thrd-child .txt-wrap > .txt-content{bottom: 313px;}
+
+#main-visual-wrap ul.main-visual-list .txt-wrap .btn-more{width:150px;}
+#main-visual-wrap ul.main-visual-list .txt-wrap .btn-more a{display: block;line-height: 40px;text-align:center;color:white;border: 1px solid #fff;}
+#main-visual-wrap ul.main-visual-list .txt-wrap .btn-more a:hover{background-color:#0068d4;border:none;}
+/* #main-visual-wrap .main-visual-list li .txt-wrap > .btn-more > a:hover{background-color: #0068d4;color: #fff;border: none;} */
+
+.bx-wrapper{box-shadow:none;border: none;margin-bottom: 60px;min-width:1260px;overflow:hidden}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager{position: absolute;bottom:74px;_background:red;text-align:center;width:200px;left:50%;transform:translateX(-50%);}
+.bx-wrapper .bx-pager.bx-default-pager a{width: 15px;height: 15px;background-color: #fff;-ms-border-radius: 50%;border-radius: 50%;}
+.bx-wrapper .bx-pager.bx-default-pager a.bx-pager-link.active{background-color: #aa9965;border: 1px solid #fff;}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto{width: 15px;height: 15px;position: absolute;bottom: 79px;left: 55%;}
+.bx-wrapper .bx-controls-auto .bx-start{width: 15px;height: 15px;background: url(../images/main/play-btn.png) 0 0 no-repeat;}
+.bx-wrapper .bx-controls-auto .bx-stop{width: 15px;height: 15px;background: url(../images/main/pause-btn.png) 0 0 no-repeat;}
+
+#main-content-1{width: 1260px;margin: 0 auto;margin-bottom: 80px;}
+#main-content-1 .con-title{margin-bottom: 32px;overflow: hidden;}
+.tit-wrap{float: left;position: relative;left: 2px;}
+.tit-wrap h3{font-weight: bold;font-size: 18px;letter-spacing: 1px;padding-left: 95px;padding-right: 15px;line-height: 36px;}
+.tit-wrap h3:before{position: absolute;top: 18px;left: 0;content:"";width: 82px;height: 1px;background: url(../images/main/con-tit-bdline.png) 0 0 no-repeat;}
+.icon-wrap img{padding-left: 0;}
+
+.contents-wrap-1{width: 1260px;}
+ul.contents-wrap-1:after{content:"";display: block;clear: both;}
+ul.contents-wrap-1 li{float: left;}
+ul.contents-wrap-1 li .con1-txt-wrap{width: 396px;min-height:93px;border: 1px solid #ccc;padding-top: 15px;text-align: right;padding-right: 10px;}
+ul.contents-wrap-1 li:nth-child(2){padding:0 36px;}
+ul.contents-wrap-1 li .con1-txt-wrap h4{margin-bottom: 10px;font-weight: bold;}
+ul.contents-wrap-1 li .con1-txt-wrap p{color: #777;}
+
+
+#main-content-2{width: 1260px;margin: 0 auto;}
+#main-content-2 .tit-wrap{left: 2px;}
+#main-content-2 .icon-wrap img{/* padding-left: 40px; */}
+#main-content-2 .con-title{margin-bottom: 32px;}
+#main-content-2 .contents-wrap-2{overflow: hidden;margin-bottom: 100px;}
+#main-content-2 ul.contents-wrap-2 li{float: left;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap{width: 500px;height: 280px;border: 1px solid #ccc;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap > ul.inner-content-2{/* height: 160px; */}
+#main-content-2 ul.contents-wrap-2 li.content-wrap h4{font-weight: bold;font-size: 18px;letter-spacing: 1px;margin: 20px 22px;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap > ul.inner-content-2{margin:25px 22px;}
+#main-content-2 ul.contents-wrap-2 ul.inner-content-2 li{position: relative;width: 450px;height: 36px;line-height: 36px;padding-right: 113px;white-space:nowrap;overflow: hidden;-ms-text-overflow: ellipsis;text-overflow: ellipsis}
+#main-content-2 ul.contents-wrap-2 ul.inner-content-2 li span{position: absolute;top: 0;right: 0;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap + li{width: 200px;;margin: 0 30px;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap + li .app-wrap{}
+#main-content-2 ul.contents-wrap-2 li.content-wrap + li .app-wrap .app-1{width: 200px;height: 131px;border: 1px solid #ccc;margin-bottom: 18px;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap + li .app-wrap .app-1 h4{font-size: 18px;font-weight: bold;text-align: center;margin: 20px 22px;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap + li .app-wrap .app-1{text-align: center;width: 200px;height: 131px;border: 1px solid #ccc;margin-bottom: 18px;}
+
+#main-content-2 ul.contents-wrap-2 li.content-wrap + li .app-wrap .app-2{height: 131px;border: 1px solid #ccc;text-align: center;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap + li .app-wrap .app-2 h4{font-size: 18px;text-align: center;margin: 20px 22px;font-weight: bold;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap + li + li{width: 500px;height: 280px;border: 1px solid #ccc;}
+#main-content-2 ul.contents-wrap-2 li.content-wrap + li + li .event-wrap h4{font-size: 18px;margin: 20px 22px;font-weight: bold;}
+.event-wrap #calendar-1 th, #calendar-1 td{border: 1px solid #ccc;}
+.event-wrap #calendar-1{position: relative;}
+.event-wrap .calendar-info{text-align: right;position: absolute;right: 22px;top: -40px;}
+.event-wrap .calendar-info button{}
+.event-wrap .calendar-info button.btnPrev{background-color: #fff;border: none;width: 12px;height: 22px;text-indent:-9999px;background-image:  url(../images/main/calendar-btn-1.png);}
+.event-wrap .calendar-info button.btnNext{border: none;background-color: #fff;width: 12px;height: 22px;text-indent:-9999px;background-image: url(../images/main/calendar-btn-2.png);}
+.event-wrap .calendar-info span{font-size: 18px;vertical-align: middle;padding:0 20px;}
+#calendar-1 .inner-calendar{width: 454px;margin: 0 auto;padding-top: 15px;}
+#calendar-1 .inner-calendar table{height: 180px;}
+#calendar-1 .inner-calendar table thead tr{height: 20px;background-color: #0068d4;color: #fff;}
+#calendar-1 .inner-calendar table thead tr th{line-height: 20px;text-align: center;}
+#calendar-1 .inner-calendar table tbody tr td{text-align: center;}
