@@ -1,0 +1,42 @@
+<서브페이지1>
+후원신청 페이지 
+
+https://donate.unesco.or.kr/v2/Member/MemberJoin.aspx?action=join&server=FN9CjGGVpy8BFMfCrxUg8g==
+메인메뉴: 후원참여-후원신청페이지 링크 
+
+
+<상단>
+https://www.unesco.or.kr/sponsorship/spon_business/
+이미지, 문구//홈내비게이션
+후원신청
+
+1. 후원자 정보입력 
+
+1. 후원종류 
+후원종류 선택
+후원금액 금액 셀렉트태그
+2.회원유형
+
+아이디 
+
+비밀번호
+
+비밀번호 확인
+
+성명
+
+성별
+
+생년월일
+
+휴대전화번호
+
+이메일
+
+주소
+
+기부금 영수증 신청
+
+이전 다음 버튼 
+
+2단계

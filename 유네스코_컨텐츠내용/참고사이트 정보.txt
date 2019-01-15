@@ -1,0 +1,30 @@
+<서울디자인재단>
+
+header 영역
+
+w:1400 * 112 
+
+footer-wrap
+w:1903 * 322
+
+
+
+포인트 컬러 1 
+보조색상
+#e3e5e4
+
+body,th,td,input,select,textarea,button
+_
+font-family: 'Noto Sans KR',dotum,'돋움',vernade,arial,sans-serif;
+    color: #58585a;
+    font-weight: 300;
+
+
+
+%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Brackets\command;C:\AutoSet9\Server\conf\;C:\AutoSet9\Server\bin\;;C:\AutoSet9\Server\conf\;C:\AutoSet9\Server\bin\;%JAVA_HOME%
+
+<한국알리기 사이트>
+
+https://www.factsaboutkorea.go.kr/welcome.do 
+
+콘텐츠 3단 

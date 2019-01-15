@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Calendar</title>
+	<style>
+		@import url(http://cestbonciel.dothome.co.kr/common/reset.css);
+		#calendar-1 th, #calendar-1 td{border: 1px solid #000;}
+		.calendar-info{text-align: center;}
+		.calendar-info span{font-size: 2.5em;vertical-align: middle;}
+	</style>
+	<script>
+	function init(){
+		var today = new Date();
+		//calendar() 함수 안에 넣으면, 이번 달 달력밖에 생성 안되서, 외부로 빼준다.
+		function calendar() {
+			var thisYear = today.getFullYear(); //2018년
+			var thisMonth = today.getMonth(); //11월
+			var thisDate = today.getDate(); //27일
+
+			//1. 이달의 1일에 대한 요일값을 구한다.
+			var firstDay = new Date(thisYear, thisMonth, 1).getDay();
+			//console.log(firstDay);
+
+			//2. 이달의 마지막 날짜를 구한다.
+			var arrLastNum = [31,28,31,30,31,30,31,31,30,31,30,31];
+			//윤년이면, 2월에 값을 28 -> 29
+			if (thisYear % 4 == 0 && thisYear % 100 != 0 || thisYear % 400 == 0){
+				arrLastNum[1] = 29;
+			}
+			var thisLastNum = arrLastNum[thisMonth];
+			//console.log(thisLastNum);
+			//3. 이달의 표가 몇 행(주)까지 필요한지 구한다.
+			var rowNum = Math.ceil( (firstDay + thisLastNum) / 7);
+			//console.log(rowNum);
+			//alert(1234);
+			var str = '<table>';
+			str += '<thead>';
+			str += '<tr>';
+			str += '<th scope="col">일</th>';
+			str += '<th scope="col">월</th>';
+			str += '<th scope="col">화</th>';
+			str += '<th scope="col">수</th>';
+			str += '<th scope="col">목</th>';
+			str += '<th scope="col">금</th>';
+			str += '<th scope="col">토</th>';
+			str += '</tr>';
+			str += '</thead>';
+			str += '<tbody>';
+			/*str += '<tr>';
+			str += '<td>1</td>';
+			str += '<td>2</td>';
+			str += '<td>3</td>';
+			str += '<td>4</td>';
+			str += '<td>5</td>';
+			str += '<td>6</td>';
+			str += '<td>7</td>';
+			str += '</tr>';*/
+
+			var dayNum  = 1;
+			for (var i = 1; i <= rowNum; i++){
+				str += '<tr>'
+				for (var k = 1; k <= 7; k++){
+					if (i == 1 && k <= firstDay || dayNum > thisLastNum ){
+						str += '<td> </td>';
+					} else {
+						str += '<td>' + dayNum + '</td>';
+						dayNum++;
+					}
+				}
+					
+				str += '</tr>';
+			}
+			
+			str += '</tbody>';
+			str += '</table>';
+
+			var innerCalendar = document.querySelector('#calendar-1 .inner-calendar');
+			innerCalendar.innerHTML = str;
+			var ct = document.querySelector('.calendar-txt');
+			ct.innerHTML = thisYear + '. ' + (thisMonth + 1);
+		}
+		calendar();
+		
+		var btn1 = document.querySelector('.btnNext');
+		var btn2 = document.querySelector('.btnPrev');
+
+		btn1.onclick = nextMonth;
+		btn2.onclick = prevMonth;
+
+		function nextMonth() {
+			today.setMonth(today.getMonth() + 1);
+			calendar();
+		}
+
+		function prevMonth() {
+			today.setMonth(today.getMonth() - 1);
+			calendar();
+		}
+	}
+	if (window.addEventListener) {
+		window.addEventListener('load',init);
+	} else {
+		window.attachEvent('onload',init);
+	}
+	</script>
+ </head>
+ <body>
+  <div id="calendar-1">
+		<p class="calendar-info"><button class="btnPrev">이전달</button> <span class="calendar-txt"> 2018.12 </span> <button class="btnNext">다음달</button></p>
+		<div class="inner-calendar">
+		
+		</div>
+	</div>
+ </body>
+</html>

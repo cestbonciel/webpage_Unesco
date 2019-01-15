@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<link rel="shortcut icon" type="image/x-icon" href="images/common/u_favicon.png">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/common.css">
+	<script src="js/html5shiv.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+	<!-- <script src="js/main.js"></script> -->
+  <title>유네스코</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script>
+	$(document).ready(function(){
+		$('.main-visual-list').bxSlider({
+				auto:true,
+				controls:false,
+				autoControls:true,
+				autoControlsCombine:true
+				});
+		
+	});
+	function init(){
+	var today = new Date();
+	//calendar() 함수 안에 넣으면, 이번 달 달력밖에 생성 안되서, 외부로 빼준다.
+	function calendar() {
+		var thisYear = today.getFullYear(); //2018년
+		var thisMonth = today.getMonth(); //11월
+		var thisDate = today.getDate(); //27일
+
+		
+		var firstDay = new Date(thisYear, thisMonth, 1).getDay();
+		
+
+		
+		var arrLastNum = [31,28,31,30,31,30,31,31,30,31,30,31];
+		
+		if (thisYear % 4 == 0 && thisYear % 100 != 0 || thisYear % 400 == 0){
+			arrLastNum[1] = 29;
+		}
+		var thisLastNum = arrLastNum[thisMonth];
+		
+		var rowNum = Math.ceil( (firstDay + thisLastNum) / 7);
+		
+		var str = '<table>';
+		str += '<thead>';
+		str += '<tr>';
+		str += '<th scope="col">일</th>';
+		str += '<th scope="col">월</th>';
+		str += '<th scope="col">화</th>';
+		str += '<th scope="col">수</th>';
+		str += '<th scope="col">목</th>';
+		str += '<th scope="col">금</th>';
+		str += '<th scope="col">토</th>';
+		str += '</tr>';
+		str += '</thead>';
+		str += '<tbody>';
+		/*str += '<tr>';
+		str += '<td>1</td>';
+		str += '<td>2</td>';
+		str += '<td>3</td>';
+		str += '<td>4</td>';
+		str += '<td>5</td>';
+		str += '<td>6</td>';
+		str += '<td>7</td>';
+		str += '</tr>';*/
+
+		var dayNum  = 1;
+		for (var i = 1; i <= rowNum; i++){
+			str += '<tr>'
+			for (var k = 1; k <= 7; k++){
+				if (i == 1 && k <= firstDay || dayNum > thisLastNum ){
+					str += '<td> </td>';
+				} else {
+					str += '<td>' + dayNum + '</td>';
+					dayNum++;
+				}
+			}
+				
+			str += '</tr>';
+		}
+		
+		str += '</tbody>';
+		str += '</table>';
+
+		var innerCalendar = document.querySelector('.event-wrap > #calendar-1 > .inner-calendar');
+		innerCalendar.innerHTML = str;
+		var ct = document.querySelector('.calendar-txt');
+		ct.innerHTML = thisYear + '. ' + (thisMonth + 1);
+	}
+	calendar();
+	
+	var btn1 = document.querySelector('.btnNext');
+	var btn2 = document.querySelector('.btnPrev');
+
+	btn1.onclick = nextMonth;
+	btn2.onclick = prevMonth;
+
+	function nextMonth() {
+		today.setMonth(today.getMonth() + 1);
+		calendar();
+	}
+
+	function prevMonth() {
+		today.setMonth(today.getMonth() - 1);
+		calendar();
+	}
+}
+if (window.addEventListener) {
+	window.addEventListener('load',init);
+} else {
+	window.attachEvent('onload',init);
+}
+
+	</script>
+ </head>
+ <body>
+  	<!-- header-wrap -->
+		<header  id="header-wrap">
+			<div id="header-top"> <!-- border-bottom -->
+				<p class="skip-menu"><a href="#container">본문바로가기</a></p>
+				<div id="util-menu-wrap"><!-- width:1260 -->
+					<ul class="util-menu"><!-- float:right -->
+						<li><a href="index.html">Home</a></li>
+						<li class="language">
+							<label for="languageSelect" class="blind">언어선택</label>
+							<select name="languageSelect" id="languageSelect" class="util-select-menu">
+								<option selected value="ko_KR">한국어</option>
+								<option value="en_US">English</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="header-bottom">
+				<div class="gnb-wrap"><!-- width:1260 -->
+					<h1><a href="index.html"><img src="images/common/header-logo.png" alt="유네스코 로고"></a></h1>
+					<nav>
+						<ul>
+							<li class="m1"><a href="#">활동</a>
+								<ul class="sub-menu">
+									<li><a href="#">교육</a></li>
+									<li><a href="#">자연과학</a></li>
+									<li><a href="#">인문사회과학</a></li>
+									<li><a href="#">문화</a></li>
+									<li><a href="#">국제협력</a></li>
+									<li><a href="#">개발협력</a></li>
+								</ul>
+							</li>
+							<li class="m2"><a href="#">소식</a>
+								<ul class="sub-menu">
+									<li><a href="#">공지사항</a></li>
+									<li><a href="#">보도자료</a></li>
+									<li><a href="#">유관기관소식</a></li>
+								</ul>
+							</li>
+							<li class="m3"><a href="#">자료</a>
+								<ul class="sub-menu">
+									<li><a href="#">유네스코 뉴스</a></li>
+									<li><a href="#">단행본 &middot; 보고서</a></li>
+									<li><a href="#">유네스코관련자료</a></li>
+									<li><a href="#">국제규범</a></li>
+								</ul>
+							</li>
+							<li class="m4"><a href="#">한국위원회</a>
+								<ul class="sub-menu">
+									<li><a href="#">인사말</a></li>
+									<li><a href="#">걸어온 길</a></li>
+									<li><a href="#">조직</a></li>
+									<li><a href="#">찾아오시는 길</a></li>
+									<li><a href="#">채용정보</a></li>
+									<li><a href="#">대관안내</a></li>
+									<li><a href="#">홍보설명회</a></li>
+								</ul>
+							</li>
+							<li class="m5"><a href="#">유네스코</a>
+								<ul class="sub-menu">
+									<li><a href="#">개관</a></li>
+									<li><a href="#">조직</a></li>
+									<li><a href="#">예산 및 분담금</a></li>
+									<li><a href="#">주요사업</a></li>
+									<li><a href="#">채용과 인턴십</a></li>
+									<li><a href="#">유네스코와 한국</a></li>
+								</ul>
+							</li>
+							<li class="m6"><a href="#">후원참여</a>
+								<ul class="sub-menu">
+									<li><a href="#">후원사업</a></li>
+									<li><a href="#">후원이야기</a></li>
+									<li><a href="#">개인후원</a></li>
+									<li><a href="#">기업후원</a></li>
+									<li><a href="#">학교후원</a></li>
+									<li><a href="#">희망나눔가게</a></li>
+									<li><a href="#">나의 후원</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<!-- //header-wrap -->
+  	<!-- container-wrap -->
+			<div id="main-visual-wrap">
+				<ul class="main-visual-list">
+					<li>
+						<div class="img-content">
+							<img src="images/main/main-slide-img-1.jpg" alt="60년전 대한민국에 교과서를 지원해준 유네스코">
+						</div>
+						<div class="txt-wrap">
+							<p class="txt-content">60년 전 대한민국에 교과서를<br>지원해 준 유네스코 </p>
+							<div class="btn-more">
+								<a href="javascript:void(0)">자세히보기</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="img-content">
+							<img src="images/main/main-slide-img-2.jpg" alt="학업을 포기해야했던 미앗이 다시 꿈을 펼칩니다">
+						</div>
+						<div class="txt-wrap">
+							<p class="txt-content">학업을 포기해야했던 미앗이<br>다시 꿈을 펼칩니다.</p>
+							<div class="btn-more">
+								<a href="javascript:void(0)">자세히보기</a>
+							</div>
+						</div>
+					</li>
+					<li class="thrd-child">
+						<div class="img-content">
+							<img src="images/main/main-slide-img-3.jpg" alt="교육을 통해 희망을 주세요">
+						</div>
+						<div class="txt-wrap">
+							<p class="txt-content">교육으로 희망을 나눠주세요</p>
+							<div class="btn-more">
+								<a href="javascript:void(0)">자세히보기</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			 <div id="main-content-1">
+				<div class="con-title">
+					<div class="tit-wrap">
+						<h3>최 근 소 식</h3>
+					</div>
+					<div class="icon-wrap">
+						<img src="images/main/con2-icon-1.png" alt="라디오아이콘">
+					</div>
+				</div>
+				<ul class="contents-wrap-1">
+					<li>
+						<a href="javascript:void(0)"><img src="images/main/con2-img-1.jpg" alt="유네스코친선"></a>
+						<div class="con1-txt-wrap">
+							<h4><a href="javascript:void(0)">씨름, 남북 첫 공동 유네스코 인류무형문화유산에 등재</a></h4>
+							<p><a href="javascript:void(0)">이병현 주 유네스코 대표부 대사(맨 왼쪽)이...</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/main/con2-img-2.jpg" alt="기념식포스터"></a>
+						<div class="con1-txt-wrap">
+							<h4><a href="javascript:void(0)">순천 유네스코 생물권보전지역 지정 기념식</a></h4>
+							<p><a href="javascript:void(0)">유네스코한국위원회(사무총장 김광호)는 MAB한국위원회, 순천시와 함께 11월 15일 전남 순천 순천만국제습지센터..</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/main/con2-img-3.jpg" alt="전략포럼"></a>
+						<div class="con1-txt-wrap">
+							<h4><a href="javascript:void(0)">2018 유네스코 전략포럼 개최</a></h4>
+							<p><a href="javascript:void(0)">이병현 주 유네스코 대표부 대사(맨 왼쪽)이...</a></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="main-content-2">
+				<div class="con-title">
+					<div class="tit-wrap">
+						<h3>알 림 공 간</h3>
+					</div>
+					<div class="icon-wrap">
+						<img src="images/main/con3-icon-1.png" alt="i아이콘">
+					</div>
+				</div>
+				<ul class="contents-wrap-2">
+					<li class="content-wrap">
+								<h4>공 지 사 항</h4>
+							<ul class="inner-content-2">
+								<li>
+									<a href="javascript:void(0)">2018 유네스코 지속가능발전교육 정책 포럼 </a>
+									<span>2018.03.09</span>
+								</li>
+								<li>
+									<a href="javascript:void(0)">씨름, 남북 첫 공동 유네스코 인류무형문화...</a>
+									<span>2018.11.27</span>
+								</li>
+								<li>
+									<a href="javascript:void(0)">[유네스코 사무총장 메시지] 세계 여성 폭력</a>
+									<span>2018.11.26</span>
+								</li>
+								<li>
+									<a href="javascript:void(0)">2018 유네스코 전략포럼 결과 공유</a>
+									<span>2018.11.23</span>
+								</li>
+								<li>
+									<a href="javascript:void(0)">2018 유네스코 후원자의 밤 행사 개최 및 참가</a>
+									<span>2018.11.20</span>
+								</li>
+							</ul>
+					</li>
+					<li>
+						<div class="app-wrap">
+							<div class="app-1">
+								<h4>홍보설명회 신청</h4>
+								<a href="javascript:void(0)"><img src="images/main/con3-icon-5.png" alt="신청아이콘"></a>
+							</div>
+							<div class="app-2">
+								<h4>유네스코홀 대관</h4>
+								<a href="javascript:void(0)"><img src="images/main/con3-icon-4.png" alt="유네스코아이콘"></a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="event-wrap">
+							<h4>이 달의 행사</h4>
+							<!-- <table class="event-calendar"></table> -->
+							  <div id="calendar-1">
+									<p class="calendar-info">
+									<button class="btnPrev">이전달</button> <span class="calendar-txt"> 2018.12 </span> <button class="btnNext">다음달</button>
+									</p>
+								<div class="inner-calendar">
+								
+								</div>
+						</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		<!-- //container-wrap -->
+	<!-- footer-wrap -->
+  <div id="footer-wrap">
+  	<!-- footer -->
+		<footer id="footer">
+			<h2 class="left"><a href="index.html"><img src="images/common/footer-logo.png" alt="유네스코 로고"></a></h2>
+			<div class="right-wrap">
+				<div class="right-1">
+					<ul>
+						<li><a href="javascript:void(0)">개인정보</a></li>
+						<li><a href="javascript:void(0)">처리방침</a></li>
+						<li><a href="javascript:void(0)">영상정보처리기기운영</a></li>
+						<li><a href="javascript:void(0)">유네스코회관</a></li>
+					</ul>
+				</div>
+				<div class="right-2">
+					<address>유네스코한국위원회   04536   서울특별시 중구 명동길(유네스코길) 26   <br>대표전화 : 02-6958-4100   후원문의 : 1800-9971<br>이메일 : online@unesco.or.kr</address>
+					<span class="last">&copy; 2018 Korean National Commission for UNESCO. All rights reserved.</span>
+				</div>
+			</div>
+		</footer>
+		<!-- //footer -->
+  </div>
+	<!-- //footer -->
+ </body>
+</html>

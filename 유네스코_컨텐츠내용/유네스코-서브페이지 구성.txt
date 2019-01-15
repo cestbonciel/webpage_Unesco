@@ -1,0 +1,39 @@
+서브페이지 디자인 레이아웃 참조 사이트
+-인천국제공항
+https://www.airport.kr/ap/ko/index.do
+
+<서브페이지1>
+1.후원신청 페이지 
+
+https://donate.unesco.or.kr/v2/Member/MemberJoin.aspx?action=join&server=FN9CjGGVpy8BFMfCrxUg8g==
+메인메뉴: 후원참여-후원신청페이지 링크 
+
+
+<서브페이지2>
+
+메인메뉴: 활동 - 국제협력  
+
+https://www.unesco.or.kr/play/international/
+
+<서브페이지3>
+
+메인메뉴: 소식-공지사항 (게시판)
+https://www.unesco.or.kr/play/international/
+메인페이지: 이달의 행사 날짜랑 공지사항 게시판으로 링크
+<서브페이지4>
+
+메인메뉴: 자료-유네스코뉴스
+
+https://www.unesco.or.kr/data/unesco_news/
+
+<서브페이지5>
+
+메인메뉴:한국위원회-인사말 
+
+https://www.unesco.or.kr/introduce/unesco_intro/
+
+<서브페이지6>
+
+메인메뉴:유네스코-개관 
+
+https://www.unesco.or.kr/unesco/unesco_survey/

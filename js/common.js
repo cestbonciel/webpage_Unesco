@@ -1,4 +1,4 @@
-/*gnb메뉴*/
+/*gnb메뉴
 function afterLoading(){
 		var gnbWrap = document.querySelector('#header-bottom nav');
 		var mainMenu = document.querySelectorAll('#header-bottom nav > ul > li > a');
@@ -23,3 +23,5 @@ function afterLoading(){
 	} else {
 	  window.addEventListener('onload',afterLoading);
 	} 
+
+*/
