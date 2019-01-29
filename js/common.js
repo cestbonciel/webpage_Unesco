@@ -1,27 +1,16 @@
-/*gnb메뉴
-function afterLoading(){
-		var gnbWrap = document.querySelector('#header-bottom nav');
-		var mainMenu = document.querySelectorAll('#header-bottom nav > ul > li > a');
-		var bgMenuOpen = document.querySelector('#header-bottom .bg-menu-open');
+$(document).ready(function(){
+		$("#header-bottom nav").hover(function(){
+				$(".sub-menu").stop().slideDown();
+				$(".bg-menu-open").stop().slideDown();
+			},function(){
+				$(".sub-menu").hide();
+				$(".bg-menu-open").hide();
+			});
 
-		for (var i in mainMenu){
-			mainMenu[i].onmouseover = mainMenu[i].onfocus = mainMenuHandler;
-		}
-		function mainMenuHandler(){
-			gnbWrap.setAttribute('class','on');
-			bgMenuOpen.setAttribute('class','bg-menu-open on');
-		}
-		gnbWrap.onmouseleave = gnbMouseleaveHandler;
+		$("ul.sub-menu li span").hover(function(){
+			$(this).addClass("active");
+		},function(){
+			$(this).removeClass("active");
+		});
+});
 
-		function gnbMouseleaveHandler(){
-			gnbWrap.setAttribute('class','');
-			bgMenuOpen.setAttribute('class','bg-menu-open');
-		}
-	}
-	if (window.addEventListener){
-	  window.addEventListener('load',afterLoading);
-	} else {
-	  window.addEventListener('onload',afterLoading);
-	} 
-
-*/

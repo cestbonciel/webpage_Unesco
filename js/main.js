@@ -60,7 +60,7 @@ function init(){
 				if (i == 1 && k <= firstDay || dayNum > thisLastNum ){
 					str += '<td> </td>';
 				} else {
-					str += '<td onclick=location.href="http://naver.com" style="cursor:pointer">' + dayNum + '</td>';
+					str += '<td onclick=location.href="notice.html">' + dayNum + '</td>';
 					dayNum++;
 				}
 			}
