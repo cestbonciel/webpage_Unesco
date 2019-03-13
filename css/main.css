@@ -15,10 +15,10 @@
 /* #main-visual-wrap .main-visual-list li .txt-wrap > .btn-more > a:hover{background-color: #0068d4;color: #fff;border: none;} */
 
 .bx-wrapper{box-shadow:none;border: none;margin-bottom: 60px;min-width:1260px;overflow:hidden}
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager{position: absolute;bottom:74px;_background:red;text-align:center;width:200px;left:50%;transform:translateX(-50%);}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager{position: absolute;bottom:30px;_background:red;text-align:center;width:200px;left:50%;transform:translateX(-50%);}
 .bx-wrapper .bx-pager.bx-default-pager a{width: 15px;height: 15px;background-color: #fff;-ms-border-radius: 50%;border-radius: 50%;}
 .bx-wrapper .bx-pager.bx-default-pager a.bx-pager-link.active{background-color: #aa9965;border: 1px solid #fff;}
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto{width: 15px;height: 15px;position: absolute;bottom: 79px;left: 55%;}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto{width: 15px;height: 15px;position: absolute;bottom: 30px;left: 55%;}
 .bx-wrapper .bx-controls-auto .bx-start{width: 15px;height: 15px;background: url(../images/main/play-btn.png) 0 0 no-repeat;}
 .bx-wrapper .bx-controls-auto .bx-stop{width: 15px;height: 15px;background: url(../images/main/pause-btn.png) 0 0 no-repeat;}
 
